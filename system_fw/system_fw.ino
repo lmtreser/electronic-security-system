@@ -7,12 +7,13 @@
 #include <LiquidCrystal_AIP31068_I2C.h>
 #include <Keypad.h>
 
-#define MSG_VERSION 042025
+#define MSG_VERSION "v042025"
 
-const byte LED_01 = A0;
-const byte LED_02 = A1;
-const byte LED_03 = A2;
-const byte LED_04 = A3;
+const byte LED_01 = 13;
+const byte LED_02 = A0;
+const byte LED_03 = A1;
+const byte LED_04 = A2;
+const byte LED_05 = A3;
 
 const byte BUZZER = 9;
 
@@ -39,34 +40,44 @@ void setup() {
   pinMode(LED_02, OUTPUT);
   pinMode(LED_03, OUTPUT);
   pinMode(LED_04, OUTPUT);
+  pinMode(LED_05, OUTPUT);
   pinMode(BUZZER, OUTPUT);
 
   Serial.begin(9600);
-  Serial.println("Hi");
+  Serial.println("Hello Human!");
+
+  lcd.init();
+  lcd.setCursor(0, 0);
+  lcd.print("Alarm Panel");
+  lcd.setCursor(0, 1);
+  lcd.print(MSG_VERSION);
 
   digitalWrite(LED_01, HIGH);
   digitalWrite(LED_02, HIGH);
   digitalWrite(LED_03, HIGH);
   digitalWrite(LED_04, HIGH);
+  digitalWrite(LED_05, LOW);
+  delay(1000);
+  digitalWrite(LED_01, LOW);
+  digitalWrite(LED_02, LOW);
+  digitalWrite(LED_03, LOW);
+  digitalWrite(LED_04, LOW);
+  digitalWrite(LED_05, HIGH);
 
   digitalWrite(BUZZER, HIGH);
   delay(250);
   digitalWrite(BUZZER, LOW);
-
-  lcd.init();
+  lcd.clear();
   lcd.setCursor(0, 0);
-  lcd.print("Holaaa");
-  lcd.setCursor(0, 1);
-  lcd.print(MSG_VERSION);
+  lcd.print("Press a key");
 }
-
 
 void loop() {
 
   char key = keypad.getKey();
 
   if (key) {
-    lcd.setCursor(0, 0);
+    lcd.setCursor(0, 1);
     lcd.print(key);
   }
 }
