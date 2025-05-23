@@ -1,25 +1,11 @@
 <circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
 
-<item itemtype="Subcircuit" CircId="ALARM_MAGNETIC-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-180,-40" rotation="0" hflip="1" vflip="1" label="MAGNETIC-1" idLabPos="-2.28486,-17.3343" labelrot="0" valLabPos="-16,20" valLabRot="0" />
+<item itemtype="Subcircuit" CircId="ALARM_MAGNETIC-1" mainComp="false" Show_id="false" Show_Val="false" Pos="-160,-180" rotation="0" hflip="1" vflip="1" label="PUERTA-ACCESO" idLabPos="-2.28486,-17.3343" labelrot="0" valLabPos="-16,20" valLabRot="0" />
 
-<item itemtype="Fixed Voltage" CircId="Fixed Voltage-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-68,-68" rotation="0" hflip="1" vflip="1" label="Fixed Voltage-2" idLabPos="-64,-24" labelrot="0" valLabPos="-16,8" valLabRot="0" Voltage="5 V" Out="true" />
-
-<item itemtype="Subcircuit" CircId="LED0-3" mainComp="false" Show_id="true" Show_Val="false" Pos="-96,40" rotation="0" hflip="1" vflip="1" label="LED0-3" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0">
-<mainCompProps MainCompId="LedBar-2" Color="Yellow" Size="1 Leds" Grounded="false" Threshold="2 V" MaxCurrent="0.01 A" Resistance="0.6 Ω" />
-</item>
-
-<item itemtype="Subcircuit" CircId="LED0-4" mainComp="false" Show_id="true" Show_Val="false" Pos="-24,8" rotation="0" hflip="1" vflip="1" label="LED0-4" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0">
-<mainCompProps MainCompId="LedBar-2" Color="Yellow" Size="1 Leds" Grounded="false" Threshold="2 V" MaxCurrent="0.01 A" Resistance="0.6 Ω" />
-</item>
-
-<item itemtype="Subcircuit" CircId="ALARM_PANEL-5" mainComp="false" Show_id="true" Show_Val="false" Pos="36,-188" rotation="0" hflip="1" vflip="1" label="ALARM_PANEL-5" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0">
+<item itemtype="Subcircuit" CircId="ALARM_PANEL-5" mainComp="false" Show_id="false" Show_Val="false" Pos="-52,-180" rotation="0" hflip="1" vflip="1" label="ALARM_PANEL-5" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0">
 <mainCompProps MainCompId="SerialTerm-25" Baudrate="9600 _Bd" DataBits="8 _bits" StopBits="1 _bits" SerialMon="false" />
 </item>
 
-<item itemtype="Connector" uid="Connector-1" startpinid="Fixed Voltage-2-outnod" endpinid="ALARM_MAGNETIC-1-pin_COM" pointList="-52,-68,-52,-8,-140,-8" />
-
-<item itemtype="Connector" uid="Connector-2" startpinid="LED0-3-AN" endpinid="ALARM_MAGNETIC-1-pin_NO" pointList="-104,48,-104,16,-140,16" />
-
-<item itemtype="Connector" uid="Connector-3" startpinid="LED0-4-AN" endpinid="ALARM_MAGNETIC-1-pin_NC" pointList="-32,16,-92,16,-92,4,-140,4" />
+<item itemtype="Resistor" CircId="Resistor-6" mainComp="false" ShowProp="Resistance" Show_id="true" Show_Val="true" Pos="-152,-76" rotation="0" hflip="1" vflip="1" label="RFL_1" idLabPos="-16,-24" labelrot="0" valLabPos="-16,6" valLabRot="0" Resistance="100 Ω" />
 
 </circuit>
